@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg" >
+
+    <com.eastelsoft.tv.widget.ESImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="@dimen/px1010"
+        android:layout_height="@dimen/px410"
+        android:layout_centerInParent="true"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/txt_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignRight="@+id/ivLogo"
+        android:paddingBottom="@dimen/px16"
+        android:paddingRight="@dimen/px40"
+        android:text="V:"
+        android:textColor="#ffffffff"
+        android:textSize="@dimen/px40"
+        android:textStyle="bold" />
+
+    <com.eastelsoft.tv.widget.ESImageView
+        android:id="@+id/img_ad"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="fitXY"
+        android:visibility="gone" />
+
+</RelativeLayout>

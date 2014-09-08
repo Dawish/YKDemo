@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="int24">24</integer>
+    <integer name="int32">32</integer>
+    <integer name="int48">48</integer>
+    <integer name="int58">58</integer>
+    <integer name="cat_id_collect">1</integer>
+    <integer name="cat_id_recommend">2</integer>
+    <integer name="cat_id_subscription">3</integer>
+    <integer name="cat_id_upload">4</integer>
+    <integer name="cat_id_history">5</integer>
+    <integer name="player_anim_duration">150</integer>
+</resources>

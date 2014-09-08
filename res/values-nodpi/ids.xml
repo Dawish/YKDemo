@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="ID_ORIGINAL_BOUND" />
+    <item type="id" name="TAG_RESTORE_FOCUS_VIEW" />
+    <item type="id" name="VIEW_ID_MARK_FOCUS_COLLEAGE" />
+    <item type="id" name="VIEW_ID_MY_SELF" />
+    <item type="id" name="VIEW_ID_KEEP_FOCUS_HISTORY" />
+    <item type="id" name="VIEW_ID_NEXT_RIGHT" />
+    <item type="id" name="VIEW_ID_NEXT_UP" />
+    <item type="id" name="VIEW_ID_NEXT_DOWN" />
+    <item type="id" name="VIEW_ID_NEXT_LEFT" />
+    <item type="id" name="next_foucs_left" />
+    <item type="id" name="next_foucs_right" />
+    <item type="id" name="next_foucs_down" />
+    <item type="id" name="next_foucs_up" />
+    <item type="id" name="player_related_item_tag" />
+    <item type="id" name="player_related_item_image_tag" />
+    <item type="id" name="tag_item" />
+    <item type="id" name="tag_home_base_page" />
+    <item type="id" name="item_position" />
+    <item type="id" name="first_module" />
+    <item type="id" name="gridmodule_title" />
+    <item type="id" name="gridmodule_item" />
+    <item type="id" name="input_keys" />
+    <item type="id" name="search_ugc_row_index" />
+    <item type="id" name="search_ugc_image_url" />
+    <item type="id" name="search_filter_order_index" />
+    <item type="id" name="drama_detail_tab_index" />
+    <item type="id" name="drama_detail_stg_expected" />
+    <item type="id" name="view_id_null" />
+    <item type="id" name="image_cached" />
+    <item type="id" name="show" />
+    <item type="id" name="recommend_fragment_2" />
+    <item type="id" name="recommend_fragment_3" />
+    <item type="id" name="program_list" />
+    <item type="id" name="program_list_allvideo" />
+    <item type="id" name="filter" />
+    <item type="id" name="history_item_tag" />
+    <item type="id" name="subject" />
+    <item type="id" name="detail_variety" />
+    <item type="id" name="detail_tv" />
+    <item type="id" name="search_list4History" />
+    <item type="id" name="image_loading" />
+</resources>

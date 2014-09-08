@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="category" format="reference" />
+    <attr name="auto_textsize" format="reference" />
+    <attr name="drawSelectorOnTop" format="reference|boolean" />
+    <attr name="listSelector" format="reference" />
+    <attr name="scrollingCache" format="reference|boolean" />
+    <attr name="textFilterEnabled" format="reference|boolean" />
+    <attr name="cacheColorHint" format="reference|color" />
+    <attr name="fastScrollEnabled" format="reference|boolean" />
+    <attr name="smoothScrollbar" format="reference|boolean" />
+    <attr name="horizontalSpacing" format="reference|integer" />
+    <attr name="verticalSpacing" format="reference|integer" />
+    <attr name="stretchMode" format="reference|integer" />
+    <attr name="rowHeight" format="reference|integer" />
+    <attr name="numRows" format="reference|integer" />
+    <attr name="gravity" format="reference|boolean" />
+    <attr name="entries" format="reference" />
+    <attr name="divider" format="reference" />
+    <attr name="dividerWidth" format="reference|integer" />
+    <attr name="choiceMode" format="reference|integer" />
+    <attr name="footerDividersEnabled" format="reference|boolean" />
+    <attr name="headerDividersEnabled" format="reference|boolean" />
+    <attr name="row" format="reference|integer" />
+    <attr name="corner_radius" format="dimension" />
+    <attr name="border_width" format="dimension" />
+    <attr name="border_color" format="color" />
+    <attr name="mutate_background" format="boolean" />
+    <attr name="oval" format="boolean" />
+    <attr name="grid_column" format="reference|integer" />
+    <attr name="grid_row" format="reference|integer" />
+    <attr name="grid_disable_animation" format="boolean" />
+</resources>

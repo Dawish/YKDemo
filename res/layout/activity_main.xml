@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg" >
+
+    <com.eastelsoft.tv.widget.ESImageView
+        android:id="@+id/left_logo"
+        android:layout_width="@dimen/px270"
+        android:layout_height="@dimen/px60"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/px36"
+        android:layout_marginTop="@dimen/px36"
+        android:src="@drawable/icon_topbar_logo" />
+
+    <TextView
+        android:id="@+id/timeview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="@dimen/px30"
+        android:layout_marginTop="@dimen/px26"
+        android:baselineAligned="false"
+        android:text="21:00" />
+
+    <view
+        android:id="@+id/top_tool_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="@dimen/px128"
+        android:layout_marginTop="@dimen/px28"
+        class="com.eastelsoft.tv.widget.home.HomeNavigatorLayout"
+        android:gravity="right"
+        android:visibility="visible" >
+
+        <ImageView
+            android:id="@+id/search"
+            android:layout_width="@dimen/px54"
+            android:layout_height="@dimen/px54"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/px40"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/home_search_background" />
+
+        <ImageView
+            android:id="@+id/history"
+            android:layout_width="@dimen/px54"
+            android:layout_height="@dimen/px54"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/px40"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/home_history_background" />
+
+        <ImageView
+            android:id="@+id/setting"
+            android:layout_width="@dimen/px54"
+            android:layout_height="@dimen/px54"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/px70"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/home_setting_background" />
+    </view>
+
+    <View
+        android:id="@+id/anchor"
+        android:layout_width="1.0dip"
+        android:layout_height="10.0dip"
+        android:layout_alignLeft="@id/top_tool_bar"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/top_tool_bar" />
+
+    <TextView
+        android:id="@+id/tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/anchor"
+        android:layout_alignTop="@id/anchor"
+        android:layout_marginLeft="@dimen/px160"
+        android:background="@drawable/home_multiscreen_tip"
+        android:text="tip"
+        android:textColor="#ffffffff"
+        android:textSize="@dimen/px24"
+        android:visibility="invisible" />
+
+    <view
+        android:id="@+id/top_viewpager_navigator"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/px146"
+        android:layout_marginTop="@dimen/px110"
+        class="com.eastelsoft.tv.widget.home.HomeNavigatorLayout"
+        android:paddingLeft="@dimen/px90"
+        android:paddingTop="@dimen/px50" />
+
+    <view
+        android:id="@+id/viewpager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/top_viewpager_navigator"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/px_minus_100"
+        class="com.eastelsoft.tv.widget.home.HomeViewPager" />
+
+</RelativeLayout>

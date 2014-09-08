@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="false" android:drawable="@drawable/view_pager_filter_gallery_item_normal_bg" />
+    <item android:state_selected="true" android:drawable="@drawable/view_pager_filter_gallery_item_hover_bg" />
+    <item android:drawable="@drawable/view_pager_filter_gallery_item_normal_bg" />
+</selector>
