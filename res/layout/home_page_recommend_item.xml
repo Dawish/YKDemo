@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<view xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item"
+    android:layout_width="@dimen/px320"
+    android:layout_height="@dimen/px200"
+    class="com.eastelsoft.tv.widget.home.HomeItemContainer"
+    android:contentDescription="home_item"
+    android:focusable="true"
+    android:tag="item_holder" >
+
+    <com.eastelsoft.tv.widget.ESImageView
+        android:id="@+id/img"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/holder_nor"
+        android:contentDescription="@string/desc"
+        android:duplicateParentState="true"
+        android:scaleType="fitXY"
+        android:visibility="visible" />
+
+    <com.eastelsoft.tv.widget.ESImageView
+        android:id="@+id/hover"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:contentDescription="@string/desc"
+        android:duplicateParentState="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/sl_image_home"
+        android:visibility="visible" />
+
+    <com.eastelsoft.tv.widget.AutoTextSizeTextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/home_item_text_margin"
+        android:layout_marginLeft="@dimen/home_item_text_margin"
+        android:layout_marginRight="@dimen/home_item_text_margin"
+        android:duplicateParentState="true"
+        android:ellipsize="marquee"
+        android:includeFontPadding="false"
+        android:marqueeRepeatLimit="50000"
+        android:shadowColor="#88333333"
+        android:shadowDx="2.0"
+        android:shadowDy="2.0"
+        android:shadowRadius="2.0"
+        android:singleLine="true"
+        android:textColor="@color/home_item_text_color"
+        android:textSize="@dimen/px40"
+        android:visibility="gone" />
+
+</view>

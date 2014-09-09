@@ -18,7 +18,7 @@ public class HomeViewPager extends ViewPager {
 	}
 	
 	private void init() {
-		setChildrenDrawingOrderEnabled(true);
+		setChildrenDrawingOrderEnabled(false);
 	}
 	
 	@Override

@@ -1,28 +1,55 @@
 package com.eastelsoft.tv.widget.home;
 
+import com.eastelsoft.tv.R;
+import com.eastelsoft.tv.widget.ESHScrollView;
+
 import android.content.Context;
+import android.graphics.Rect;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
 
-public class HomeBasePage implements IViewPagerContent{
+public abstract class HomeBasePage implements IViewPagerContent{
 
-	private Context mContext;
+	protected View mContent;
+	protected Context mContext;
+	protected int mOffsetX;
+	protected int mOffsetY;
 	
 	public HomeBasePage(Context context) {
 		mContext = context;
+		mOffsetX = (int)mContext.getResources().getDimension(R.dimen.px72);
+		mOffsetY = (int)mContext.getResources().getDimension(R.dimen.px98);
 	}
 
 	@Override
 	public View createContentView() {
-		return null;
+		mContent = onCreateContentView();
+		updateContentView();
+		return mContent;
 	}
 
-	@Override
-	public String getPageTitle() {
-		return "BASE";
+	protected View generatePageContent(ViewGroup viewGroup, int resId, int offsetX, int offsetY, boolean flag) {
+		ViewGroup mViewGroup = (ViewGroup)View.inflate(mContext, resId, null);
+		Rect mRect = new Rect(offsetX, offsetY, offsetX, offsetY);
+		ViewGroup container = generatePageContentContainer(offsetX, flag);
+		LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+		layoutParams.leftMargin = offsetX;
+		layoutParams.rightMargin = offsetX;
+		layoutParams.topMargin = offsetY;
+		layoutParams.bottomMargin = offsetY;
+		container.addView(mViewGroup, layoutParams);
+		return container;
 	}
-
-	@Override
-	public void updateContentView() {
+	
+	private ViewGroup generatePageContentContainer(int offsetX, boolean flag) {
+		ESHScrollView scrollView = new ESHScrollView(mContext);
+		scrollView.setClipChildren(false);
+		scrollView.setClipToPadding(false);
+		return scrollView;
 	}
+	
+	protected abstract View onCreateContentView();
 
 }

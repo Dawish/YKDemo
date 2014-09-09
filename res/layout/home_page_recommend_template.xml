@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:id="@+id/_navigator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <include
+            android:id="@+id/navigator_0"
+            android:layout_width="@dimen/home_recommend_nav_item_wight"
+            android:layout_height="@dimen/home_recommend_nav_item_height"
+            layout="@layout/home_page_navigator_item" />
+
+        <include
+            android:id="@+id/navigator_1"
+            android:layout_width="@dimen/home_recommend_nav_item_wight"
+            android:layout_height="@dimen/home_recommend_nav_item_height"
+            android:layout_marginTop="@dimen/home_item_margin"
+            layout="@layout/home_page_navigator_item" />
+
+        <include
+            android:id="@+id/navigator_2"
+            android:layout_width="@dimen/home_recommend_nav_item_wight"
+            android:layout_height="@dimen/home_recommend_nav_item_height"
+            android:layout_marginTop="@dimen/home_item_margin"
+            layout="@layout/home_page_navigator_item" />
+    </LinearLayout>
+
+    <include
+        android:id="@+id/recommend_0"
+        android:layout_width="@dimen/home_recommend_big_item_width"
+        android:layout_height="@dimen/home_recommend_big_item_height"
+        android:layout_marginLeft="@dimen/home_item_margin"
+        layout="@layout/home_page_recommend_item" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/home_item_margin"
+        android:orientation="vertical" >
+
+        <include
+            android:id="@+id/recommend_1"
+            android:layout_width="@dimen/home_recommend_3items_land_item_width"
+            android:layout_height="@dimen/home_recommend_3items_land_item_height"
+            layout="@layout/home_page_recommend_item" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/home_item_margin" >
+
+            <include
+                android:id="@+id/recommend_2"
+                android:layout_width="@dimen/home_recommend_3items_port_item_width"
+                android:layout_height="@dimen/home_recommend_3items_port_item_height"
+                layout="@layout/home_page_recommend_item" />
+
+            <include
+                android:id="@+id/recommend_3"
+                android:layout_width="@dimen/home_recommend_3items_port_item_width"
+                android:layout_height="@dimen/home_recommend_3items_port_item_height"
+                android:layout_marginLeft="@dimen/home_item_margin"
+                layout="@layout/home_page_recommend_item" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/home_item_margin"
+        android:orientation="vertical" >
+
+        <include
+            android:id="@+id/recommend_4"
+            android:layout_width="@dimen/home_recommend_3items_land_item_width"
+            android:layout_height="@dimen/home_recommend_3items_land_item_height"
+            layout="@layout/home_page_recommend_item" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/home_item_margin" >
+
+            <include
+                android:id="@+id/recommend_5"
+                android:layout_width="@dimen/home_recommend_3items_port_item_width"
+                android:layout_height="@dimen/home_recommend_3items_port_item_height"
+                layout="@layout/home_page_recommend_item" />
+
+            <include
+                android:id="@+id/recommend_6"
+                android:layout_width="@dimen/home_recommend_3items_port_item_width"
+                android:layout_height="@dimen/home_recommend_3items_port_item_height"
+                android:layout_marginLeft="@dimen/home_item_margin"
+                layout="@layout/home_page_recommend_item" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <include
+        android:id="@+id/recommend_7"
+        android:layout_width="@dimen/home_recommend_big_item_width"
+        android:layout_height="@dimen/home_recommend_big_item_height"
+        android:layout_marginLeft="@dimen/home_item_margin"
+        layout="@layout/home_page_recommend_item" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/home_item_margin"
+        android:orientation="vertical" >
+
+        <include
+            android:id="@+id/recommend_8"
+            android:layout_width="@dimen/home_recommend_3items_land_item_width"
+            android:layout_height="@dimen/home_recommend_3items_land_item_height"
+            layout="@layout/home_page_recommend_item" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/home_item_margin" >
+
+            <include
+                android:id="@+id/recommend_9"
+                android:layout_width="@dimen/home_recommend_3items_port_item_width"
+                android:layout_height="@dimen/home_recommend_3items_port_item_height"
+                layout="@layout/home_page_recommend_item" />
+
+            <include
+                android:id="@+id/recommend_10"
+                android:layout_width="@dimen/home_recommend_3items_port_item_width"
+                android:layout_height="@dimen/home_recommend_3items_port_item_height"
+                android:layout_marginLeft="@dimen/home_item_margin"
+                layout="@layout/home_page_recommend_item" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/_bigdata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/home_item_margin"
+        android:orientation="vertical" >
+
+        <include
+            android:id="@+id/big_data_0"
+            android:layout_width="@dimen/home_bigdata_item_width"
+            android:layout_height="@dimen/home_bigdata_item_height"
+            layout="@layout/home_page_recommend_item" />
+
+        <include
+            android:id="@+id/big_data_1"
+            android:layout_width="@dimen/home_bigdata_item_width"
+            android:layout_height="@dimen/home_bigdata_item_height"
+            android:layout_marginTop="@dimen/home_item_margin"
+            layout="@layout/home_page_recommend_item" />
+
+        <include
+            android:id="@+id/big_data_2"
+            android:layout_width="@dimen/home_bigdata_item_width"
+            android:layout_height="@dimen/home_bigdata_item_height"
+            android:layout_marginTop="@dimen/home_item_margin"
+            layout="@layout/home_page_recommend_item" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/home_item_margin"
+        android:orientation="vertical" >
+
+        <include
+            android:id="@+id/big_data_3"
+            android:layout_width="@dimen/home_bigdata_item_width"
+            android:layout_height="@dimen/home_bigdata_item_height"
+            layout="@layout/home_page_recommend_item" />
+
+        <include
+            android:id="@+id/big_data_4"
+            android:layout_width="@dimen/home_bigdata_item_width"
+            android:layout_height="@dimen/home_bigdata_item_height"
+            android:layout_marginTop="@dimen/home_item_margin"
+            layout="@layout/home_page_recommend_item" />
+
+        <include
+            android:id="@+id/big_data_5"
+            android:layout_width="@dimen/home_bigdata_item_width"
+            android:layout_height="@dimen/home_bigdata_item_height"
+            android:layout_marginTop="@dimen/home_item_margin"
+            layout="@layout/home_page_recommend_item" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="dimen" name="home_recommend_app_margin">@dimen/px0</item>
+    <item type="dimen" name="home_recommend_app_wight">@dimen/px298</item>
+    <item type="dimen" name="home_recommend_app_height">@dimen/home_recommend_app_wight</item>
+    <item type="dimen" name="home_recommend_app_icon_wight">@dimen/px140</item>
+    <item type="dimen" name="home_recommend_app_icon_height">@dimen/home_recommend_app_icon_wight</item>
+    <item type="dimen" name="home_item_margin">@dimen/px0</item>
+    <item type="dimen" name="home_recommend_nav_item_wight">@dimen/px242</item>
+    <item type="dimen" name="home_recommend_nav_item_height">@dimen/px232</item>
+    <item type="dimen" name="home_recommend_big_item_width">@dimen/px468</item>
+    <item type="dimen" name="home_recommend_big_item_height">@dimen/px698</item>
+    <item type="dimen" name="home_recommend_3items_land_item_width">@dimen/px540</item>
+    <item type="dimen" name="home_recommend_3items_land_item_height">@dimen/px304</item>
+    <item type="dimen" name="home_recommend_3items_port_item_width">@dimen/px270</item>
+    <item type="dimen" name="home_recommend_3items_port_item_height">@dimen/px392</item>
+    <item type="dimen" name="home_bigdata_item_width">@dimen/px402</item>
+    <item type="dimen" name="home_bigdata_item_height">@dimen/px232</item>
+    <item type="dimen" name="home_channel_item_width">@dimen/px348</item>
+    <item type="dimen" name="home_channel_item_height">@dimen/home_channel_item_width</item>
+    <item type="dimen" name="top_item_margin">@dimen/px38</item>
+    <item type="dimen" name="home_top_item_width">@dimen/px526</item>
+    <item type="dimen" name="home_top_item_height">@dimen/px696</item>
+    <item type="dimen" name="home_userconter_item_width">@dimen/px446</item>
+    <item type="dimen" name="home_userconter_big_item_height">@dimen/px696</item>
+    <item type="dimen" name="home_userconter_small_item_height">@dimen/px348</item>
+    <item type="dimen" name="user_center_sub_title_text_size">@dimen/px30</item>
+    <item type="dimen" name="user_center_title_text_size">@dimen/px36</item>
+    <item type="dimen" name="youku_channel_item_height">@dimen/px66</item>
+    <item type="dimen" name="youku_channel_item_width">@dimen/px194</item>
+    <item type="dimen" name="sub_channel_module_height">@dimen/px980</item>
+    <item type="dimen" name="module_item_padding_bottom">@dimen/px10</item>
+    <item type="dimen" name="module_item_padding_top">@dimen/px10</item>
+    <item type="dimen" name="module_item_header_height">@dimen/px10</item>
+    <item type="dimen" name="sub_channel_module_item_height">@dimen/px460</item>
+    <item type="dimen" name="home_item_text_margin">@dimen/px14</item>
+    <dimen name="filter_item_spacing">20.0dip</dimen>
+    <dimen name="filter_item_head_width">100.0dip</dimen>
+    <item type="dimen" name="filter_item_width">@dimen/px200</item>
+    <item type="dimen" name="filter_sort_item_width">@dimen/px280</item>
+</resources>
