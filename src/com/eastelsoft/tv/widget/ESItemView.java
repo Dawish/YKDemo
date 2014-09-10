@@ -11,20 +11,30 @@ import com.eastelsoft.tv.R;
 
 public class ESItemView extends TextView {
 
-	private Rect mRect = new Rect();
-	private Drawable mDrawable = getResources().getDrawable(R.drawable.nav_focused_2);
-	private int mOffset = getResources().getDimensionPixelSize(R.dimen.px44);
+	private Rect mRect;
+	private Drawable mDrawable;
+	private int mOffset;
 	
 	public ESItemView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
+		init();
 	}
 
 	public ESItemView(Context context) {
 		super(context);
+		init();
 	}
 
 	public ESItemView(Context context, AttributeSet attrs) {
 		super(context, attrs);
+		init();
+	}
+	
+	private void init() {
+		setWillNotDraw(false);
+		mRect = new Rect();
+		mDrawable = getResources().getDrawable(R.drawable.nav_focused_2);
+		mOffset = getResources().getDimensionPixelSize(R.dimen.px44);
 	}
 	
 	@Override
@@ -45,7 +55,7 @@ public class ESItemView extends TextView {
 			if (text != null && text.length() > 2) {
 				mDrawable = getResources().getDrawable(R.drawable.nav_focused_3);
 			}
-			getDrawingRect(mRect);
+			super.getDrawingRect(mRect);
 			mRect.left = mOffset;
 			mRect.right = mOffset;
 			mRect.top = mOffset;
