@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fullscreen"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/loading"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <com.youku.tv.widget.Loading
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/detailLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:visibility="invisible" >
+
+        <RelativeLayout
+            android:id="@+id/home_top_bar_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/px120"
+            android:layout_marginTop="@dimen/px20"
+            android:gravity="top" >
+
+            <include
+                android:id="@+id/home_top_bar"
+                layout="@layout/detail_page_top" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/px120"
+            android:paddingRight="@dimen/px118" >
+
+            <RelativeLayout
+                android:id="@+id/detail_area"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/px588" >
+
+                <com.youku.lib.widget.YoukuImageView
+                    android:id="@+id/centerimage"
+                    android:layout_width="@dimen/px374"
+                    android:layout_height="fill_parent"
+                    android:layout_marginTop="@dimen/px6"
+                    android:background="@drawable/sl_image_nopading"
+                    android:scaleType="fitXY" />
+
+                <com.youku.lib.widget.YoukuImageView
+                    android:id="@+id/centerimage_flag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/centerimage"
+                    android:layout_alignTop="@id/centerimage" />
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/px52"
+                    android:layout_toRightOf="@id/centerimage" >
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginRight="@dimen/px80"
+                        android:ellipsize="end"
+                        android:includeFontPadding="false"
+                        android:maxEms="9"
+                        android:singleLine="true"
+                        android:textColor="#ffffffff"
+                        android:textSize="@dimen/px72" />
+
+                    <TextView
+                        android:id="@+id/rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/title"
+                        android:layout_marginBottom="@dimen/px3"
+                        android:layout_marginLeft="@dimen/px80"
+                        android:layout_toRightOf="@id/title"
+                        android:includeFontPadding="false"
+                        android:textColor="#ffef4a37" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_vv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/rating"
+                        android:layout_marginBottom="@dimen/px3"
+                        android:layout_marginLeft="@dimen/px46"
+                        android:layout_toRightOf="@id/rating"
+                        android:gravity="center_vertical" >
+
+                        <com.youku.lib.widget.YoukuImageView
+                            android:id="@+id/imageView1"
+                            android:layout_width="@dimen/px24"
+                            android:layout_height="@dimen/px24"
+                            android:src="@drawable/detail_play_count" />
+
+                        <TextView
+                            android:id="@+id/textView_detail_movie_vv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/px12"
+                            android:text="detailmovie_vv"
+                            android:textColor="#ff1c9dd7"
+                            android:textSize="@dimen/px28" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/publishTime"
+                        style="@style/detail_info_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/title"
+                        android:layout_marginTop="@dimen/px30"
+                        android:maxEms="10"
+                        android:singleLine="true"
+                        android:text="上映：未知"
+                        android:textColor="#ffffffff" />
+
+                    <TextView
+                        android:id="@+id/lastHistory"
+                        style="@style/detail_info_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/publishTime"
+                        android:layout_marginLeft="@dimen/px484"
+                        android:singleLine="true"
+                        android:text="集数：未知"
+                        android:textColor="#ffffffff" />
+
+                    <TextView
+                        android:id="@+id/area"
+                        style="@style/detail_info_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/publishTime"
+                        android:layout_marginTop="@dimen/px16"
+                        android:maxEms="10"
+                        android:singleLine="true"
+                        android:text="地区：未知"
+                        android:textColor="#ffffffff" />
+
+                    <TextView
+                        android:id="@+id/type"
+                        style="@style/detail_info_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@id/lastHistory"
+                        android:layout_alignTop="@id/area"
+                        android:singleLine="true"
+                        android:text="类型：未知"
+                        android:textColor="#ffffffff" />
+
+                    <TextView
+                        android:id="@+id/director"
+                        style="@style/detail_info_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/area"
+                        android:layout_marginTop="@dimen/px16"
+                        android:ellipsize="end"
+                        android:maxEms="10"
+                        android:singleLine="true"
+                        android:text="导演：未知"
+                        android:textColor="#ffffffff" />
+
+                    <TextView
+                        android:id="@+id/actors"
+                        style="@style/detail_info_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@id/type"
+                        android:layout_alignTop="@id/director"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="主演：未知"
+                        android:textColor="#ffffffff" />
+
+                    <TextView
+                        android:id="@+id/info"
+                        style="@style/detail_info_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/director"
+                        android:layout_marginTop="@dimen/px24"
+                        android:text="简介："
+                        android:textColor="#ffffffff"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/infoContent"
+                        style="@style/detail_info_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/director"
+                        android:layout_marginTop="@dimen/px26"
+                        android:includeFontPadding="false"
+                        android:lineSpacingExtra="@dimen/px18"
+                        android:maxLines="@integer/detail_info_max_line"
+                        android:text="未知"
+                        android:textColor="#ffc2c6cb"
+                        android:textColorHighlight="#ffc2c6cb" />
+
+                    <Button
+                        android:id="@+id/btnFullDesc"
+                        android:layout_width="@dimen/px120"
+                        android:layout_height="@dimen/px46"
+                        android:layout_alignBottom="@id/infoContent"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginBottom="@dimen/px20"
+                        android:layout_marginRight="@dimen/px25"
+                        android:background="@drawable/detail_full_desc"
+                        android:nextFocusDown="@+id/btnPlay"
+                        android:nextFocusLeft="@id/btnFullDesc"
+                        android:nextFocusRight="@id/btnFullDesc"
+                        android:nextFocusUp="@id/btnFullDesc" />
+
+                    <Button
+                        android:id="@+id/btnPlay"
+                        android:layout_width="@dimen/px200"
+                        android:layout_height="@dimen/px60"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/detail_btn_play"
+                        android:nextFocusLeft="@id/btnPlay"
+                        android:nextFocusUp="@id/btnFullDesc" />
+
+                    <Button
+                        android:id="@+id/btnBuy"
+                        android:layout_width="@dimen/px200"
+                        android:layout_height="@dimen/px60"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="@dimen/px40"
+                        android:layout_toRightOf="@id/btnPlay"
+                        android:background="@drawable/background_channel_button"
+                        android:text="@string/buy"
+                        android:textColor="@color/home_setting_item_text_color_selector"
+                        android:textSize="@dimen/px30"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/btnShowDrama"
+                        android:layout_width="@dimen/px200"
+                        android:layout_height="@dimen/px60"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="@dimen/px42"
+                        android:layout_toRightOf="@id/btnBuy"
+                        android:background="@drawable/background_channel_button"
+                        android:text="@string/drama"
+                        android:textColor="@color/home_setting_item_text_color_selector"
+                        android:textSize="@dimen/px30"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/btnFavorite"
+                        android:layout_width="@dimen/px200"
+                        android:layout_height="@dimen/px60"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="@dimen/px42"
+                        android:layout_toRightOf="@id/btnShowDrama"
+                        android:background="@drawable/background_channel_button"
+                        android:nextFocusRight="@id/btnFavorite"
+                        android:text="@string/favorite"
+                        android:textColor="@color/home_setting_item_text_color_selector"
+                        android:textSize="@dimen/px30"
+                        android:visibility="invisible" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_favorite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="@dimen/px40"
+                        android:layout_toRightOf="@id/ll_vv"
+                        android:gravity="center_vertical"
+                        android:visibility="gone" >
+
+                        <com.youku.lib.widget.YoukuImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="@dimen/px24"
+                            android:layout_height="@dimen/px24"
+                            android:src="@drawable/detail_collection_icon" />
+
+                        <TextView
+                            android:id="@+id/textView_detail_movie_favorite"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/px10"
+                            android:text="detailmovie_favorite"
+                            android:textColor="#ffa3a3a3"
+                            android:textSize="@dimen/px24" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <com.youku.lib.widget.YoukuImageView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/px40"
+                android:background="@drawable/detail_seg" />
+
+            <LinearLayout
+                android:id="@+id/bottomimages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal" >
+
+                <include
+                    android:id="@+id/frame1"
+                    layout="@layout/detail_page_bottom" />
+
+                <include
+                    android:id="@+id/frame2"
+                    layout="@layout/detail_page_bottom" />
+
+                <include
+                    android:id="@+id/frame3"
+                    layout="@layout/detail_page_bottom" />
+
+                <include
+                    android:id="@+id/frame4"
+                    layout="@layout/detail_page_bottom" />
+
+                <include
+                    android:id="@+id/frame5"
+                    layout="@layout/detail_page_bottom" />
+
+                <include
+                    android:id="@+id/frame6"
+                    layout="@layout/detail_page_bottom" />
+
+                <include
+                    android:id="@+id/frame7"
+                    layout="@layout/detail_page_bottom" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

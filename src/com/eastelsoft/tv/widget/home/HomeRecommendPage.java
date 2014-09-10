@@ -12,6 +12,7 @@ import com.eastelsoft.tv.widget.ESImageView;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -119,41 +120,49 @@ public class HomeRecommendPage extends HomeBasePage {
 	}
 	
 	public void initListener() {
-		ViewGroup viewGroup = (ViewGroup)mContent;
-		String tag = "item_holder";
-		System.out.println("count : "+viewGroup.getChildCount());
-		for (int i = 0; i < viewGroup.getChildCount(); i++) {
-			View child = viewGroup.getChildAt(i);
-			if (child.getTag() == tag || tag.equals(child.getTag())) {
-				child.setOnClickListener(new View.OnClickListener() {
-					public void onClick(View v) {
-						System.out.println("-----------------> onclick");
-						Object objItem = v.getTag(R.id.home_top_bar);
-						if (objItem == null) {
-							return;
-						}
-						if (objItem instanceof NavigatorItem) {//导航格
-							NavigatorItem item = (NavigatorItem)objItem;
-							if ("search".equalsIgnoreCase(item.getMtype())) {
-								Toast.makeText(ESApplication.getInstance(), "search click !!!", Toast.LENGTH_SHORT).show();
-								return;
-							}
-							if ("history".equalsIgnoreCase(item.getMtype())) {
-								Toast.makeText(ESApplication.getInstance(), "history click !!!", Toast.LENGTH_SHORT).show();
-								return;
-							}
-							if ("favor".equalsIgnoreCase(item.getMtype())) {
-								Toast.makeText(ESApplication.getInstance(), "favor click !!!", Toast.LENGTH_SHORT).show();
-								return;
-							}
-						} else if(objItem instanceof ShowItem) {
-							ShowItem item = (ShowItem)objItem;
-							String title = item.getTitle();
-							Toast.makeText(ESApplication.getInstance(), title+" click !!!", Toast.LENGTH_SHORT).show();
-						}
-					}
-				});
+		NavigatorListener nl = new NavigatorListener();
+		mContent.findViewById(R.id.navigator_0).setOnClickListener(nl);
+		mContent.findViewById(R.id.navigator_1).setOnClickListener(nl);
+		mContent.findViewById(R.id.navigator_2).setOnClickListener(nl);
+		
+		RectItemListener rl = new RectItemListener();
+		mContent.findViewById(R.id.recommend_0).setOnClickListener(rl);
+		mContent.findViewById(R.id.recommend_1).setOnClickListener(rl);
+		mContent.findViewById(R.id.recommend_2).setOnClickListener(rl);
+		mContent.findViewById(R.id.recommend_3).setOnClickListener(rl);
+		mContent.findViewById(R.id.recommend_4).setOnClickListener(rl);
+		mContent.findViewById(R.id.recommend_5).setOnClickListener(rl);
+		mContent.findViewById(R.id.recommend_6).setOnClickListener(rl);
+		mContent.findViewById(R.id.recommend_7).setOnClickListener(rl);
+		mContent.findViewById(R.id.recommend_8).setOnClickListener(rl);
+		mContent.findViewById(R.id.recommend_9).setOnClickListener(rl);
+		mContent.findViewById(R.id.recommend_10).setOnClickListener(rl);
+	}
+	
+	private class NavigatorListener implements OnClickListener{
+		public void onClick(View v) {
+			Object objItem = v.getTag(R.id.home_top_bar);
+			NavigatorItem item = (NavigatorItem)objItem;
+			switch (v.getId()) {
+			case R.id.navigator_0:
+				v.setNextFocusUpId(R.id.top_viewpager_navigator);
+				Toast.makeText(ESApplication.getInstance(), item.getTitle()+"search click !!!", Toast.LENGTH_SHORT).show();
+				break;
+			case R.id.navigator_1:
+				Toast.makeText(ESApplication.getInstance(), item.getTitle()+"history click !!!", Toast.LENGTH_SHORT).show();
+				break;
+			case R.id.navigator_2:
+				Toast.makeText(ESApplication.getInstance(), item.getTitle()+"favor click !!!", Toast.LENGTH_SHORT).show();
+				break;
 			}
+		}
+	}
+	
+	private class RectItemListener implements OnClickListener{
+		public void onClick(View v) {
+			Object objItem = v.getTag(R.id.home_top_bar);
+			ShowItem item = (ShowItem)objItem;
+			Toast.makeText(ESApplication.getInstance(), item.getTitle()+" click !!!", Toast.LENGTH_SHORT).show();
 		}
 	}
 }

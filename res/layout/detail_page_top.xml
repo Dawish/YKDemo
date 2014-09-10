@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/px100" >
+
+    <com.eastelsoft.tv.widget.ESImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/index_tab_line"
+        android:visibility="gone" />
+
+    <com.eastelsoft.tv.widget.ESImageView
+        android:id="@+id/left_logo"
+        android:layout_width="@dimen/px270"
+        android:layout_height="@dimen/px60"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/px36"
+        android:focusable="false"
+        android:src="@drawable/icon_topbar_logo"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/left_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/px8"
+        android:text="title"
+        android:textColor="#ffffffff"
+        android:textSize="@dimen/px57" />
+
+    <TextView
+        android:id="@+id/left_second_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/left_title"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/px24"
+        android:layout_toRightOf="@id/left_title"
+        android:text=""
+        android:textColor="#ffaaaaaa"
+        android:textSize="@dimen/px30" />
+
+    <TextView
+        android:id="@+id/timeview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/px36"
+        android:text="21:00" />
+
+</RelativeLayout>

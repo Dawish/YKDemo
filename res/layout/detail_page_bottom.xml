@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/flRelative"
+    android:layout_width="@dimen/px190"
+    android:layout_height="@dimen/px264"
+    android:layout_marginLeft="@dimen/px26"
+    android:layout_marginRight="@dimen/px26" >
+
+    <com.baseproject.volley.toolbox.NetworkImageView
+        android:id="@+id/thumb"
+        android:layout_width="@dimen/px178"
+        android:layout_height="@dimen/px252"
+        android:layout_centerInParent="true"
+        android:background="@drawable/sl_image_nopading"
+        android:scaleType="fitXY" />
+
+    <com.youku.lib.widget.YoukuImageView
+        android:id="@+id/ivImage"
+        android:layout_width="@dimen/px190"
+        android:layout_height="@dimen/px264"
+        android:background="@drawable/sl_image_home"
+        android:focusable="true"
+        android:scaleType="fitXY" />
+
+    <ImageView
+        android:id="@+id/shadow"
+        android:layout_width="@dimen/px178"
+        android:layout_height="@dimen/px252"
+        android:layout_centerInParent="true"
+        android:adjustViewBounds="false"
+        android:background="@drawable/poster_rim_focus"
+        android:scaleType="fitXY" />
+
+    <com.youku.tv.widget.MarqueeTextView
+        android:id="@+id/title1"
+        android:layout_width="@dimen/px170"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/ivImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/px8"
+        android:ellipsize="marquee"
+        android:gravity="center_horizontal"
+        android:marqueeRepeatLimit="5"
+        android:maxWidth="@dimen/px166"
+        android:singleLine="true"
+        android:textColor="#ffffffff"
+        android:textSize="@dimen/px28" />
+
+</RelativeLayout>
