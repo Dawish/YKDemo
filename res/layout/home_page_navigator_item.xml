@@ -6,7 +6,6 @@
     android:layout_height="@dimen/home_recommend_nav_item_height"
     class="com.eastelsoft.tv.widget.home.HomeItemContainer"
     android:clickable="true"
-    android:contentDescription="navgator_item"
     android:focusable="true"
     android:tag="item_holder" >
 
@@ -28,7 +27,7 @@
         android:scaleType="fitXY"
         android:src="@drawable/sl_image_home_navigator" />
 
-    <com.eastelsoft.tv.widget.AutoTextSizeTextView
+    <com.eastelsoft.tv.widget.ESAutoTextView
         android:id="@+id/text"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

@@ -109,7 +109,8 @@
         android:layout_alignParentBottom="true"
         android:layout_below="@id/top_viewpager_navigator"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/px_minus_100"
+        android:layout_marginTop="@dimen/px1"
+        android:layout_marginLeft="@dimen/px70"
         class="com.eastelsoft.tv.widget.home.HomeViewPager" />
 
 </RelativeLayout>

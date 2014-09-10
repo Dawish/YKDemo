@@ -41,4 +41,6 @@
     <item type="id" name="detail_tv" />
     <item type="id" name="search_list4History" />
     <item type="id" name="image_loading" />
+    
+    <item type="id" name="home_top_bar" />
 </resources>

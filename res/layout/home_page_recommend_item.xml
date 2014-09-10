@@ -29,7 +29,7 @@
         android:src="@drawable/sl_image_home"
         android:visibility="visible" />
 
-    <com.eastelsoft.tv.widget.AutoTextSizeTextView
+    <com.eastelsoft.tv.widget.ESAutoTextView
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
