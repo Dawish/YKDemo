@@ -6,10 +6,13 @@ import com.eastelsoft.tv.bean.HomePageBean;
 import com.eastelsoft.tv.bean.HomePageBean.NavigatorItem;
 import com.eastelsoft.tv.bean.HomePageBean.ShowItem;
 import com.eastelsoft.tv.dao.HomePageDao;
+import com.eastelsoft.tv.ui.avtivity.HomeActivity;
+import com.eastelsoft.tv.ui.avtivity.player.VideoPlayerActivity;
 import com.eastelsoft.tv.util.URLHelper;
 import com.eastelsoft.tv.widget.ESImageView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -162,6 +165,13 @@ public class HomeRecommendPage extends HomeBasePage {
 		public void onClick(View v) {
 			Object objItem = v.getTag(R.id.home_top_bar);
 			ShowItem item = (ShowItem)objItem;
+			switch (v.getId()) {
+			case R.id.recommend_0:
+				Intent intent = new Intent();
+				intent.setClass(mContext, VideoPlayerActivity.class);
+				mContext.startActivity(intent);
+				return;
+			}
 			Toast.makeText(ESApplication.getInstance(), item.getTitle()+" click !!!", Toast.LENGTH_SHORT).show();
 		}
 	}
