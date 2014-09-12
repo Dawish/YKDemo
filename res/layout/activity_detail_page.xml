@@ -47,7 +47,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="@dimen/px588" >
 
-                <com.youku.lib.widget.YoukuImageView
+                <com.eastelsoft.tv.widget.ESImageView
                     android:id="@+id/centerimage"
                     android:layout_width="@dimen/px374"
                     android:layout_height="fill_parent"
@@ -55,7 +55,7 @@
                     android:background="@drawable/sl_image_nopading"
                     android:scaleType="fitXY" />
 
-                <com.youku.lib.widget.YoukuImageView
+                <com.eastelsoft.tv.widget.ESImageView
                     android:id="@+id/centerimage_flag"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -80,7 +80,8 @@
                         android:maxEms="9"
                         android:singleLine="true"
                         android:textColor="#ffffffff"
-                        android:textSize="@dimen/px72" />
+                        android:textSize="@dimen/px72"
+                        android:text="aaaa" />
 
                     <TextView
                         android:id="@+id/rating"
@@ -103,7 +104,7 @@
                         android:layout_toRightOf="@id/rating"
                         android:gravity="center_vertical" >
 
-                        <com.youku.lib.widget.YoukuImageView
+                        <com.eastelsoft.tv.widget.ESImageView
                             android:id="@+id/imageView1"
                             android:layout_width="@dimen/px24"
                             android:layout_height="@dimen/px24"
@@ -249,7 +250,7 @@
                         android:text="@string/buy"
                         android:textColor="@color/home_setting_item_text_color_selector"
                         android:textSize="@dimen/px30"
-                        android:visibility="gone" />
+                        android:visibility="visible" />
 
                     <Button
                         android:id="@+id/btnShowDrama"
@@ -262,7 +263,7 @@
                         android:text="@string/drama"
                         android:textColor="@color/home_setting_item_text_color_selector"
                         android:textSize="@dimen/px30"
-                        android:visibility="gone" />
+                        android:visibility="visible" />
 
                     <Button
                         android:id="@+id/btnFavorite"
@@ -276,7 +277,7 @@
                         android:text="@string/favorite"
                         android:textColor="@color/home_setting_item_text_color_selector"
                         android:textSize="@dimen/px30"
-                        android:visibility="invisible" />
+                        android:visibility="visible" />
 
                     <LinearLayout
                         android:id="@+id/ll_favorite"
@@ -288,7 +289,7 @@
                         android:gravity="center_vertical"
                         android:visibility="gone" >
 
-                        <com.youku.lib.widget.YoukuImageView
+                        <com.eastelsoft.tv.widget.ESImageView
                             android:id="@+id/imageView3"
                             android:layout_width="@dimen/px24"
                             android:layout_height="@dimen/px24"
@@ -306,7 +307,7 @@
                 </RelativeLayout>
             </RelativeLayout>
 
-            <com.youku.lib.widget.YoukuImageView
+            <com.eastelsoft.tv.widget.ESImageView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/px40"

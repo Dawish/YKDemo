@@ -8,7 +8,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@drawable/index_tab_line"
-        android:visibility="gone" />
+        android:visibility="visible" />
 
     <com.eastelsoft.tv.widget.ESImageView
         android:id="@+id/left_logo"
@@ -19,7 +19,7 @@
         android:layout_marginLeft="@dimen/px36"
         android:focusable="false"
         android:src="@drawable/icon_topbar_logo"
-        android:visibility="gone" />
+        android:visibility="visible" />
 
     <TextView
         android:id="@+id/left_title"
@@ -28,7 +28,6 @@
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:layout_marginLeft="@dimen/px8"
-        android:text="title"
         android:textColor="#ffffffff"
         android:textSize="@dimen/px57" />
 

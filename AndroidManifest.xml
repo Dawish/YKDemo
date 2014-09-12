@@ -45,6 +45,24 @@
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
             android:screenOrientation="landscape"
             android:configChanges="keyboardHidden|orientation"/>
+        
+        <activity 
+            android:name=".ui.avtivity.DetailPageActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:screenOrientation="landscape"
+            android:configChanges="keyboardHidden|orientation"/>
+        
+        <activity 
+            android:name=".ui.avtivity.player.VideoPlayerActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:screenOrientation="landscape"
+            android:configChanges="keyboardHidden|orientation"/>
+        
+        <activity 
+            android:name="io.vov.vitamio.activity.InitActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:screenOrientation="landscape"
+            android:configChanges="keyboardHidden|orientation"/>
     </application>
 
 </manifest>

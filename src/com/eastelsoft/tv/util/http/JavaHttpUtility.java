@@ -55,6 +55,7 @@ public class JavaHttpUtility {
     public String doPost(String urlAddress, Map<String, String> param) throws Exception {
         String errorStr = "���س�ʱ...";
         try {
+        	System.out.println("url : "+urlAddress);
             URL url = new URL(urlAddress);
             HttpURLConnection uRLConnection;
             uRLConnection = (HttpURLConnection) url.openConnection();

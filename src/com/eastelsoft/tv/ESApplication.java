@@ -22,8 +22,8 @@ public class ESApplication extends Application {
 		super.onCreate();
 		instance = this;
 		initImageLoader(getApplicationContext());
-		CrashHandler crashHandler = CrashHandler.getInstance();  
-		crashHandler.init(getApplicationContext());  
+//		CrashHandler crashHandler = CrashHandler.getInstance();  
+//		crashHandler.init(getApplicationContext());  
 	}
 	
 	public static ESApplication getInstance() {

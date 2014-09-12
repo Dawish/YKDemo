@@ -1,12 +1,14 @@
 package com.eastelsoft.tv.widget.home;
 
+import java.util.HashMap;
+
 import com.eastelsoft.tv.ESApplication;
 import com.eastelsoft.tv.R;
 import com.eastelsoft.tv.bean.HomePageBean;
 import com.eastelsoft.tv.bean.HomePageBean.NavigatorItem;
 import com.eastelsoft.tv.bean.HomePageBean.ShowItem;
 import com.eastelsoft.tv.dao.HomePageDao;
-import com.eastelsoft.tv.ui.avtivity.HomeActivity;
+import com.eastelsoft.tv.ui.avtivity.DetailPageActivity;
 import com.eastelsoft.tv.ui.avtivity.player.VideoPlayerActivity;
 import com.eastelsoft.tv.util.URLHelper;
 import com.eastelsoft.tv.widget.ESImageView;
@@ -16,7 +18,6 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -76,8 +77,9 @@ public class HomeRecommendPage extends HomeBasePage {
 
 		@Override
 		protected Boolean doInBackground(String... params) {
-			String url = URLHelper.HOME_PAGE_URL2;
-			HomePageDao dao = new HomePageDao(url);
+			String url = URLHelper.HOME_PAGE_URL;
+			HashMap<String, String> uParams = URLHelper.getPARARMS();
+			HomePageDao dao = new HomePageDao(url, uParams);
 			bean = dao.getBean();
 			return true;
 		}
@@ -165,14 +167,11 @@ public class HomeRecommendPage extends HomeBasePage {
 		public void onClick(View v) {
 			Object objItem = v.getTag(R.id.home_top_bar);
 			ShowItem item = (ShowItem)objItem;
-			switch (v.getId()) {
-			case R.id.recommend_0:
-				Intent intent = new Intent();
-				intent.setClass(mContext, VideoPlayerActivity.class);
-				mContext.startActivity(intent);
-				return;
-			}
-			Toast.makeText(ESApplication.getInstance(), item.getTitle()+" click !!!", Toast.LENGTH_SHORT).show();
+			Intent intent = new Intent();
+			intent.setClass(mContext, DetailPageActivity.class);
+			intent.putExtra("showid", item.showid);
+			mContext.startActivity(intent);
+//			Toast.makeText(ESApplication.getInstance(), item.getTitle()+" click !!!", Toast.LENGTH_SHORT).show();
 		}
 	}
 }

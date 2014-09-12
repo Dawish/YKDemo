@@ -64,6 +64,7 @@ public class VideoPlayerActivity extends BaseActivity implements OnCompletionLis
 		title = intent.getStringExtra("title");
 		brief = intent.getStringExtra("brief");
 		mPath = "http://live.3gv.ifeng.com/zixun.m3u8";
+		mPath = "http://58.240.63.104/Wildlife.wmv";
 		System.out.println("video url : " + mPath);
 
 		// ~~~ 检测Vitamio是否解压解码包

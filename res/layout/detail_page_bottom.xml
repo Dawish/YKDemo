@@ -6,7 +6,7 @@
     android:layout_marginLeft="@dimen/px26"
     android:layout_marginRight="@dimen/px26" >
 
-    <com.baseproject.volley.toolbox.NetworkImageView
+    <com.eastelsoft.tv.widget.ESImageView
         android:id="@+id/thumb"
         android:layout_width="@dimen/px178"
         android:layout_height="@dimen/px252"
@@ -14,7 +14,7 @@
         android:background="@drawable/sl_image_nopading"
         android:scaleType="fitXY" />
 
-    <com.youku.lib.widget.YoukuImageView
+    <com.eastelsoft.tv.widget.ESImageView
         android:id="@+id/ivImage"
         android:layout_width="@dimen/px190"
         android:layout_height="@dimen/px264"
@@ -31,7 +31,7 @@
         android:background="@drawable/poster_rim_focus"
         android:scaleType="fitXY" />
 
-    <com.youku.tv.widget.MarqueeTextView
+    <TextView
         android:id="@+id/title1"
         android:layout_width="@dimen/px170"
         android:layout_height="wrap_content"
