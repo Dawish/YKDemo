@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/px1920"
+    android:layout_height="@dimen/px1080"
+    android:background="#ba000000"
+    android:gravity="center" >
+
+    <LinearLayout
+        android:layout_width="@dimen/px1280"
+        android:layout_height="@dimen/px720"
+        android:orientation="vertical"
+        android:padding="@dimen/px36" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/px36"
+            android:layout_marginTop="@dimen/px4"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/px20"
+                android:text="剧集:"
+                android:textColor="#ffffffff"
+                android:textSize="@dimen/px44" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/drama_list_title_tip"
+                android:textColor="#ffbbbbbb"
+                android:textSize="@dimen/px30" />
+        </LinearLayout>
+
+        <HorizontalScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scrollbarStyle="insideOverlay"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:id="@+id/title_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <com.eastelsoft.tv.widget.ESImageView
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/px2"
+            android:src="#ff00a9e6" />
+
+        <LinearLayout
+            android:id="@+id/drama_area"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:orientation="vertical" />
+    </LinearLayout>
+
+</RelativeLayout>

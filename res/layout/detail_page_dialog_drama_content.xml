@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/px40" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/px80"
+        android:layout_marginBottom="@dimen/px22"
+        android:orientation="horizontal" >
+
+        <include
+            android:layout_width="@dimen/px180"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="@dimen/px77"
+            layout="@layout/item_detail_drama" />
+
+        <include
+            android:layout_width="@dimen/px180"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="@dimen/px77"
+            layout="@layout/item_detail_drama" />
+
+        <include
+            android:layout_width="@dimen/px180"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="@dimen/px77"
+            layout="@layout/item_detail_drama" />
+
+        <include
+            android:layout_width="@dimen/px180"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="@dimen/px77"
+            layout="@layout/item_detail_drama" />
+
+        <include
+            android:layout_width="@dimen/px180"
+            android:layout_height="fill_parent"
+            layout="@layout/item_detail_drama" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/px80"
+        android:layout_marginBottom="@dimen/px22"
+        android:orientation="horizontal" >
+
+        <include
+            android:layout_width="@dimen/px180"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="@dimen/px77"
+            layout="@layout/item_detail_drama" />
+
+        <include
+            android:layout_width="@dimen/px180"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="@dimen/px77"
+            layout="@layout/item_detail_drama" />
+
+        <include
+            android:layout_width="@dimen/px180"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="@dimen/px77"
+            layout="@layout/item_detail_drama" />
+
+        <include
+            android:layout_width="@dimen/px180"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="@dimen/px77"
+            layout="@layout/item_detail_drama" />
+
+        <include
+            android:layout_width="@dimen/px180"
+            android:layout_height="fill_parent"
+            layout="@layout/item_detail_drama" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/px80"
+        android:layout_marginBottom="@dimen/px22"
+        android:orientation="horizontal" >
+
+        <include
+            android:layout_width="@dimen/px180"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="@dimen/px77"
+            layout="@layout/item_detail_drama" />
+
+        <include
+            android:layout_width="@dimen/px180"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="@dimen/px77"
+            layout="@layout/item_detail_drama" />
+
+        <include
+            android:layout_width="@dimen/px180"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="@dimen/px77"
+            layout="@layout/item_detail_drama" />
+
+        <include
+            android:layout_width="@dimen/px180"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="@dimen/px77"
+            layout="@layout/item_detail_drama" />
+
+        <include
+            android:layout_width="@dimen/px180"
+            android:layout_height="fill_parent"
+            layout="@layout/item_detail_drama" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/px80"
+        android:layout_marginBottom="@dimen/px22"
+        android:orientation="horizontal" >
+
+        <include
+            android:layout_width="@dimen/px180"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="@dimen/px77"
+            layout="@layout/item_detail_drama" />
+
+        <include
+            android:layout_width="@dimen/px180"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="@dimen/px77"
+            layout="@layout/item_detail_drama" />
+
+        <include
+            android:layout_width="@dimen/px180"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="@dimen/px77"
+            layout="@layout/item_detail_drama" />
+
+        <include
+            android:layout_width="@dimen/px180"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="@dimen/px77"
+            layout="@layout/item_detail_drama" />
+
+        <include
+            android:layout_width="@dimen/px180"
+            android:layout_height="fill_parent"
+            layout="@layout/item_detail_drama" />
+    </LinearLayout>
+
+</LinearLayout>

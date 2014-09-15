@@ -15,6 +15,10 @@ public class URLHelper {
 
 	public static String BASE_DETAIL = "http://tv.api.3g.youku.com/layout/smarttv/play/detail";
 
+	public static String BASE_REALTED = "http://tv.api.3g.youku.com/common/shows/relate";
+	
+	public static String BASE_DRAMA = "http://tv.api.3g.youku.com/layout/smarttv/shows/";
+	
 	public static HashMap<String, String> getPARARMS() {
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("pid", "b2b26ec8ed9bbc9f");

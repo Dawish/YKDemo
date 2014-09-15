@@ -1,19 +1,26 @@
 package com.eastelsoft.tv.ui.avtivity;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.eastelsoft.tv.R;
+import com.eastelsoft.tv.bean.DetailDramaBean;
 import com.eastelsoft.tv.bean.DetailPageBean;
+import com.eastelsoft.tv.bean.DetailRelatedBean;
+import com.eastelsoft.tv.dao.DetailDramaDao;
 import com.eastelsoft.tv.dao.DetailPageDao;
+import com.eastelsoft.tv.dao.DetailRelatedDao;
 import com.eastelsoft.tv.ui.avtivity.base.BaseActivity;
 import com.eastelsoft.tv.ui.avtivity.player.VideoPlayerActivity;
 import com.eastelsoft.tv.util.URLHelper;
@@ -24,6 +31,7 @@ public class DetailPageActivity extends BaseActivity {
 	private RelativeLayout mFullscreen;
 	private RelativeLayout mLoading;
 	private LinearLayout mDetailLayout;
+	private LinearLayout mBottomimages;
 	private ESImageView mCenterimage;
 	private ESImageView mCenterimage_flag;
 	private TextView mTitle;
@@ -41,9 +49,12 @@ public class DetailPageActivity extends BaseActivity {
 	private Button mBtnBuy;
 	private Button mBtnShowDrama;
 	private Button mBtnFavorite;
+	private ArrayList<ViewGroup> mBottomFramelists;
 	
 	private String mShowId;
 	private DetailPageBean mBean;
+	private DetailRelatedBean mRelatedBean;
+	private DetailDramaBean mDramaBean;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -69,13 +80,14 @@ public class DetailPageActivity extends BaseActivity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		new DataAsyncTask().execute("");
+		new MoiveAsyncTask().execute("");
 	}
 	
 	private void initViews() {
 		mFullscreen = (RelativeLayout)findViewById(R.id.fullscreen);
 		mLoading = (RelativeLayout)findViewById(R.id.loading);
 		mDetailLayout = (LinearLayout)findViewById(R.id.detailLayout);
+		mBottomimages = (LinearLayout)findViewById(R.id.bottomimages);
 		
 		mCenterimage = (ESImageView)findViewById(R.id.centerimage);
 		mCenterimage_flag = (ESImageView)findViewById(R.id.centerimage_flag);
@@ -97,6 +109,23 @@ public class DetailPageActivity extends BaseActivity {
 		mBtnBuy = (Button)findViewById(R.id.btnBuy);
 		mBtnShowDrama = (Button)findViewById(R.id.btnShowDrama);
 		mBtnFavorite = (Button)findViewById(R.id.btnFavorite);
+		
+		prepareLayout();
+	}
+	
+	private void prepareLayout() {
+		if (mBottomFramelists != null) {
+			mBottomFramelists.clear();
+			mBottomFramelists = null;
+		}
+		mBottomFramelists = new ArrayList<>();
+		mBottomFramelists.add((ViewGroup)findViewById(R.id.frame1));
+		mBottomFramelists.add((ViewGroup)findViewById(R.id.frame2));
+		mBottomFramelists.add((ViewGroup)findViewById(R.id.frame3));
+		mBottomFramelists.add((ViewGroup)findViewById(R.id.frame4));
+		mBottomFramelists.add((ViewGroup)findViewById(R.id.frame5));
+		mBottomFramelists.add((ViewGroup)findViewById(R.id.frame6));
+		mBottomFramelists.add((ViewGroup)findViewById(R.id.frame7));
 	}
 	
 	private void updateViews() {
@@ -132,9 +161,31 @@ public class DetailPageActivity extends BaseActivity {
 			mActors.setText("演员：未知");
 		}
 		mInfoContent.setText("简介："+mBean.detail.desc);
+		
+		//ask for related moive
+		new DramaAsyncTask().execute("");
+		new RelatedAsyncTask().execute("");
 	}
 	
-	private class DataAsyncTask extends AsyncTask<String, Integer, Boolean> {
+	private void updateRelatedViews() {
+		int count = mRelatedBean.results.size();
+		if (count > mBottomFramelists.size()) {
+			count= mBottomFramelists.size();
+		}
+		for (int i = 0; i < count; i++) {
+			ImageView iv = (ImageView)((ViewGroup)mBottomFramelists.get(i)).findViewById(R.id.ivImage);
+			TextView tv = (TextView)((ViewGroup)mBottomFramelists.get(i)).findViewById(R.id.title1);
+			tv.setText(mRelatedBean.results.get(i).showname);
+			imageLoader.displayImage(mRelatedBean.results.get(i).show_vthumburl, iv, options);
+			iv.setOnClickListener(new View.OnClickListener() {
+				public void onClick(View v) {
+					System.out.println("related on click !!!");
+				}
+			});
+		}
+	}
+	
+	private class MoiveAsyncTask extends AsyncTask<String, Integer, Boolean> {
 		@Override
 		protected Boolean doInBackground(String... params) {
 			String url = URLHelper.BASE_DETAIL;
@@ -147,6 +198,43 @@ public class DetailPageActivity extends BaseActivity {
 		protected void onPostExecute(Boolean result) {
 			super.onPostExecute(result);
 			updateViews();
+		}
+	}
+	
+	private class RelatedAsyncTask extends AsyncTask<String, Integer, Boolean> {
+
+		@Override
+		protected Boolean doInBackground(String... params) {
+			String url = URLHelper.BASE_REALTED;
+			HashMap<String, String> uParams = URLHelper.getPARARMS();
+			uParams.put("id", mShowId);
+			uParams.put("apptype", "5");
+			uParams.put("module", "1");
+			uParams.put("pz", "20");
+			mRelatedBean = new DetailRelatedDao(url, uParams).getBean();
+			return true;
+		}
+		
+		@Override
+		protected void onPostExecute(Boolean result) {
+			super.onPostExecute(result);
+			updateRelatedViews();
+		}
+	}
+	
+	private class DramaAsyncTask extends AsyncTask<String, Integer, Boolean> {
+
+		@Override
+		protected Boolean doInBackground(String... params) {
+			String url = URLHelper.BASE_DRAMA+mShowId+"series";
+			HashMap<String, String> uParams = URLHelper.getPARARMS();
+			mDramaBean = new DetailDramaDao(url, uParams).getBean();
+			return true;
+		}
+		
+		@Override
+		protected void onPostExecute(Boolean result) {
+			super.onPostExecute(result);
 		}
 	}
 }
