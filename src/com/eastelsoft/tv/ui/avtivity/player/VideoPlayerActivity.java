@@ -53,7 +53,7 @@ public class VideoPlayerActivity extends BaseActivity implements OnCompletionLis
 		title = intent.getStringExtra("title");
 		brief = intent.getStringExtra("brief");
 		mPath = "http://live.3gv.ifeng.com/zixun.m3u8";
-		mPath = "http://61.155.192.42/videos/v0/20140828/7a/de/59e9a52eb2dbed184ef512a6017b0fe3.mp4?key=2feb4ffd97eaf8&m=v&qd_src=ih5&qd_tm=1410743107848&qd_ip=10.42.48.18&qd_sc=5d721a2cfee389b2c76de635694d3098&ip=10.42.48.18&uuid=dcb5731d-54163b43-1a";
+		mPath = "http://61.155.192.42/videos/v0/20140828/7a/de/59e9a52eb2dbed184ef512a6017b0fe3.mp4?key=98fa086ded79bc90&m=v&qd_src=ih5&qd_tm=1410775731650&qd_ip=10.46.227.57&qd_sc=e2071363efe0ecf2cb9c8e453c0cf31d&ip=10.46.227.57&uuid=6fce1654-5416bab3-33";
 		System.out.println("video url : " + mPath);
 
 		// ~~~ 检测Vitamio是否解压解码包
@@ -71,6 +71,7 @@ public class VideoPlayerActivity extends BaseActivity implements OnCompletionLis
 		// ~~~ 绑定事件
 		mVideoView.setOnCompletionListener(this);
 		mVideoView.setOnInfoListener(this);
+		mVideoView.setVideoChroma(MediaPlayer.VIDEOCHROMA_RGB565);
 
 		// ~~~ 绑定数据
 		if (mPath.startsWith("http:"))
@@ -83,7 +84,7 @@ public class VideoPlayerActivity extends BaseActivity implements OnCompletionLis
 		mMediaController.setFileName(mTitle);
 		mVideoView.setMediaController(mMediaController);
 		mVideoView.requestFocus();
-
+		
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 	}
 
