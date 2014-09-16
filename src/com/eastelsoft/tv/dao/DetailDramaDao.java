@@ -25,7 +25,7 @@ public class DetailDramaDao {
 	public DetailDramaBean getBean() {
 		try {
 			String jsonString = getJSON();
-			System.out.println("json : "+jsonString);
+//			System.out.println("json : "+jsonString);
 			Gson gson = new Gson();
 			DetailDramaBean bean = gson.fromJson(jsonString, DetailDramaBean.class);
 			System.out.println("data : "+bean.status);

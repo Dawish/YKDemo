@@ -24,7 +24,7 @@ public class DetailRelatedDao {
 	public DetailRelatedBean getBean() {
 		try {
 			String jsonString = getJSON();
-			System.out.println("json : "+jsonString);
+//			System.out.println("json : "+jsonString);
 			Gson gson = new Gson();
 			DetailRelatedBean bean = gson.fromJson(jsonString, DetailRelatedBean.class);
 			System.out.println("data : "+bean.status);

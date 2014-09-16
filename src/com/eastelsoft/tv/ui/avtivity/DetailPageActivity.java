@@ -8,11 +8,14 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.eastelsoft.tv.R;
 import com.eastelsoft.tv.bean.DetailDramaBean;
@@ -25,6 +28,7 @@ import com.eastelsoft.tv.ui.avtivity.base.BaseActivity;
 import com.eastelsoft.tv.ui.avtivity.player.VideoPlayerActivity;
 import com.eastelsoft.tv.util.URLHelper;
 import com.eastelsoft.tv.widget.ESImageView;
+import com.eastelsoft.tv.widget.dialog.DramaDialog;
 
 public class DetailPageActivity extends BaseActivity {
 
@@ -50,6 +54,7 @@ public class DetailPageActivity extends BaseActivity {
 	private Button mBtnShowDrama;
 	private Button mBtnFavorite;
 	private ArrayList<ViewGroup> mBottomFramelists;
+	private DramaDialog mDramaDialog;
 	
 	private String mShowId;
 	private DetailPageBean mBean;
@@ -75,11 +80,25 @@ public class DetailPageActivity extends BaseActivity {
 				startActivity(intent);
 			}
 		});
+		
+		mBtnShowDrama.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (mDramaBean == null) {
+					Toast.makeText(DetailPageActivity.this, "剧集数据加载失败！", Toast.LENGTH_SHORT).show();
+					return;
+				}
+				if (mDramaBean.results.size() > 0) {
+					mDramaDialog.show();
+				}
+			}
+		});
 	}
 	
 	@Override
 	protected void onResume() {
 		super.onResume();
+		mBtnPlay.requestFocus();
 		new MoiveAsyncTask().execute("");
 	}
 	
@@ -140,22 +159,22 @@ public class DetailPageActivity extends BaseActivity {
 		
 		mPublishTime.setText("上映："+mBean.detail.showdate);
 		mLastHistory.setText("集数："+mBean.detail.stripe_bottom);
-		if (mBean.detail.area.size() > 0) {
+		if (mBean.detail.area.size() > 0 && mBean.detail.area.size() > 0) {
 			mArea.setText("地区："+mBean.detail.area.get(0));
 		}else {
 			mArea.setText("地区：未知");
 		}
-		if (mBean.detail.genre != null) {
+		if (mBean.detail.genre != null && mBean.detail.genre.size() > 0) {
 			mType.setText("类型："+mBean.detail.genre.get(0));
 		}else {
 			mType.setText("地区：未知");
 		}
-		if (mBean.detail.director != null) {
+		if (mBean.detail.director != null && mBean.detail.director.size() > 0) {
 			mDirector.setText("导演："+mBean.detail.director.get(0));
 		}else {
 			mDirector.setText("导演：未知");
 		}
-		if (mBean.detail.performer != null) {
+		if (mBean.detail.performer != null  && mBean.detail.performer.size() > 0) {
 			mActors.setText("演员："+mBean.detail.performer.get(0));
 		}else {
 			mActors.setText("演员：未知");
@@ -183,6 +202,14 @@ public class DetailPageActivity extends BaseActivity {
 				}
 			});
 		}
+	}
+	
+	private void createDramaDialog() {
+		mDramaDialog = new DramaDialog(this, mDramaBean);
+		WindowManager.LayoutParams layoutParams = mDramaDialog.getWindow().getAttributes();
+		layoutParams.width = getResources().getDimensionPixelSize(R.dimen.px1280);
+		layoutParams.height = getResources().getDimensionPixelSize(R.dimen.px720);
+		mDramaDialog.getWindow().setAttributes(layoutParams);
 	}
 	
 	private class MoiveAsyncTask extends AsyncTask<String, Integer, Boolean> {
@@ -218,6 +245,11 @@ public class DetailPageActivity extends BaseActivity {
 		@Override
 		protected void onPostExecute(Boolean result) {
 			super.onPostExecute(result);
+//			System.out.println("json size related : "+mRelatedBean.results.size());
+			if (mRelatedBean == null) {
+				Toast.makeText(DetailPageActivity.this, "推荐视频数据加载失败！", Toast.LENGTH_SHORT).show();
+				return;
+			}
 			updateRelatedViews();
 		}
 	}
@@ -226,7 +258,7 @@ public class DetailPageActivity extends BaseActivity {
 
 		@Override
 		protected Boolean doInBackground(String... params) {
-			String url = URLHelper.BASE_DRAMA+mShowId+"series";
+			String url = URLHelper.BASE_DRAMA+mShowId+"/series";
 			HashMap<String, String> uParams = URLHelper.getPARARMS();
 			mDramaBean = new DetailDramaDao(url, uParams).getBean();
 			return true;
@@ -235,6 +267,13 @@ public class DetailPageActivity extends BaseActivity {
 		@Override
 		protected void onPostExecute(Boolean result) {
 			super.onPostExecute(result);
+//			System.out.println("json size drama : "+mDramaBean.results.size());
+			if (mDramaBean == null) {
+				Toast.makeText(DetailPageActivity.this, "剧集数据加载失败！", Toast.LENGTH_SHORT).show();
+				return;
+			}
+			createDramaDialog();
 		}
 	}
+	
 }

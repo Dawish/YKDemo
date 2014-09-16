@@ -77,8 +77,11 @@ public class HomeActivity extends BaseActivity implements OnClickListener{
 			View.inflate(this, R.layout.home_top_navigator_item, mTopNavigatorContainer);
 			TextView child = (TextView)mTopNavigatorContainer.getChildAt(-1+mTopNavigatorContainer.getChildCount());
 			child.setText(page.getPageTitle());
+			child.setFocusable(true);
+			child.setFocusableInTouchMode(true);
+			child.setClickable(true);
 			if (i == 0) {
-				child.findFocus();
+				child.requestFocus();
 			}
 		}
 		mParent.addView(mTopNavigatorContainer, layoutParams);

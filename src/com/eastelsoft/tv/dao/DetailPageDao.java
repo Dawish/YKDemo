@@ -24,7 +24,7 @@ public class DetailPageDao {
 	public DetailPageBean getBean() {
 		try {
 			String jsonString = getJSON();
-			System.out.println("json : "+jsonString);
+//			System.out.println("json : "+jsonString);
 			Gson gson = new Gson();
 			DetailPageBean bean = gson.fromJson(jsonString, DetailPageBean.class);
 			System.out.println("data : "+bean.status);
