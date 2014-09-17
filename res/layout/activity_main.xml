@@ -13,7 +13,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="@dimen/px36"
         android:layout_marginTop="@dimen/px36"
-        android:src="@drawable/icon_topbar_logo" />
+        android:src="@drawable/cmcc_logo" />
 
     <TextView
         android:id="@+id/timeview"
@@ -97,7 +97,7 @@
         android:id="@+id/top_viewpager_navigator"
         android:layout_width="fill_parent"
         android:layout_height="@dimen/px146"
-        android:layout_marginTop="@dimen/px110"
+        android:layout_marginTop="@dimen/px130"
         class="com.eastelsoft.tv.widget.home.HomeNavigatorLayout"
         android:paddingLeft="@dimen/px90"
         android:paddingTop="@dimen/px50" />

@@ -42,6 +42,13 @@ public class HomeActivity extends BaseActivity implements OnClickListener{
 		findViews();
 		//initToolBar();
 		initViewPager();
+		findFocus();
+	}
+	
+	private void findFocus() {
+		mSearch.setNextFocusDownId(R.id.top_viewpager_navigator);
+		mHistory.setNextFocusDownId(R.id.top_viewpager_navigator);
+		mSetting.setNextFocusDownId(R.id.top_viewpager_navigator);
 	}
 	
 	private void findViews() {
@@ -65,6 +72,14 @@ public class HomeActivity extends BaseActivity implements OnClickListener{
 		
 		mPagerAdapter = new HomePagerAdapter(this, mPagerSpecs);
 		mPager.setAdapter(mPagerAdapter);
+		mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+			@Override
+			public void onPageSelected(int position) {
+				mTopNavigatorContainer.getChildAt(position).requestFocus();
+			}
+			public void onPageScrolled(int arg0, float arg1, int arg2) {}
+			public void onPageScrollStateChanged(int arg0) {}
+		});
 	}
 	
 	private void initViewPagerNavigation() {
@@ -82,15 +97,17 @@ public class HomeActivity extends BaseActivity implements OnClickListener{
 			child.setClickable(true);
 			if (i == 0) {
 				child.requestFocus();
+				child.setNextFocusDownId(R.id.navigator_0);
 			}
+			child.setNextFocusUpId(R.id.search);
 		}
 		mParent.addView(mTopNavigatorContainer, layoutParams);
 		mTopNavigatorContainer.bringToFront();
 		mTopNavigatorContainer.setClipChildren(false);
 		mTopNavigatorContainer.setClipToPadding(false);
 		
-		mTopNavigatorContainer.setNextFocusUpId(R.id.top_tool_bar);
-		mTopNavigatorContainer.setNextFocusDownId(R.id.viewpager);
+//		mTopNavigatorContainer.setNextFocusUpId(R.id.top_tool_bar);
+//		mTopNavigatorContainer.setNextFocusDownId(R.id.viewpager);
 		
 		int count = mTopNavigatorContainer.getChildCount();
 		for (int i = 0; i < count; i++) {
@@ -99,6 +116,7 @@ public class HomeActivity extends BaseActivity implements OnClickListener{
 				public void onFocusChange(View v, boolean hasFocus) {
 					if (hasFocus) {
 						int index = mTopNavigatorContainer.indexOfChild(v);
+						System.out.println("current page : "+index);
 						mPager.setCurrentItem(index);
 					}
 				}

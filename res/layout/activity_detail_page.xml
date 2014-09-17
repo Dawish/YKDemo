@@ -214,13 +214,14 @@
                         android:maxLines="@integer/detail_info_max_line"
                         android:text="未知"
                         android:textColor="#ffc2c6cb"
+                        android:ellipsize="end"
                         android:textColorHighlight="#ffc2c6cb" />
 
                     <Button
                         android:id="@+id/btnFullDesc"
                         android:layout_width="@dimen/px120"
                         android:layout_height="@dimen/px46"
-                        android:layout_alignBottom="@id/infoContent"
+                        android:layout_below="@id/infoContent"
                         android:layout_alignParentRight="true"
                         android:layout_marginBottom="@dimen/px20"
                         android:layout_marginRight="@dimen/px25"

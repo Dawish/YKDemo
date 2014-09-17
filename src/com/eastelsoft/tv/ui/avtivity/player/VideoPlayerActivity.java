@@ -72,7 +72,7 @@ public class VideoPlayerActivity extends BaseActivity implements OnCompletionLis
 		mVideoView.setOnCompletionListener(this);
 		mVideoView.setOnInfoListener(this);
 		mVideoView.setVideoChroma(MediaPlayer.VIDEOCHROMA_RGB565);
-
+		
 		// ~~~ 绑定数据
 		if (mPath.startsWith("http:"))
 			mVideoView.setVideoURI(Uri.parse(mPath));
