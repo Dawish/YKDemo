@@ -21,12 +21,15 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.Display;
 import android.view.GestureDetector;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnKeyListener;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.GestureDetector.SimpleOnGestureListener;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class VideoPlayerActivity extends BaseActivity implements OnCompletionListener, OnInfoListener {
 	
@@ -52,8 +55,7 @@ public class VideoPlayerActivity extends BaseActivity implements OnCompletionLis
 		mPath = intent.getStringExtra("url");
 		title = intent.getStringExtra("title");
 		brief = intent.getStringExtra("brief");
-		mPath = "http://live.3gv.ifeng.com/zixun.m3u8";
-		mPath = "http://61.155.192.42/videos/v0/20140828/7a/de/59e9a52eb2dbed184ef512a6017b0fe3.mp4?key=98fa086ded79bc90&m=v&qd_src=ih5&qd_tm=1410775731650&qd_ip=10.46.227.57&qd_sc=e2071363efe0ecf2cb9c8e453c0cf31d&ip=10.46.227.57&uuid=6fce1654-5416bab3-33";
+		mPath = "http://58.240.63.104/han.mp4";
 		System.out.println("video url : " + mPath);
 
 		// ~~~ 检测Vitamio是否解压解码包
@@ -84,6 +86,13 @@ public class VideoPlayerActivity extends BaseActivity implements OnCompletionLis
 		mMediaController.setFileName(mTitle);
 		mVideoView.setMediaController(mMediaController);
 		mVideoView.requestFocus();
+		mVideoView.setOnKeyListener(new OnKeyListener() {
+			@Override
+			public boolean onKey(View v, int keyCode, KeyEvent event) {
+				Toast.makeText(VideoPlayerActivity.this, String.format("keyCode : %d", keyCode), Toast.LENGTH_SHORT).show();
+				return true;
+			}
+		});
 		
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 	}

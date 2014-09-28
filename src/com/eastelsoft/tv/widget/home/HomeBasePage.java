@@ -43,7 +43,6 @@ public abstract class HomeBasePage implements IViewPagerContent{
 
 	protected View generatePageContent(ViewGroup viewGroup, int resId, int offsetX, int offsetY, boolean flag) {
 		ViewGroup mViewGroup = (ViewGroup)View.inflate(mContext, resId, null);
-		Rect mRect = new Rect(offsetX, offsetY, offsetX, offsetY);
 		ViewGroup container = generatePageContentContainer(offsetX, flag);
 		LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 		layoutParams.leftMargin = offsetX;

@@ -12,6 +12,8 @@ public class URLHelper {
 			+ "&network=WIFI";
 	
 	public static String HOME_PAGE_URL = "http://tv.api.3g.youku.com/tv/main"; 
+	
+	public static String HOME_CHANNEL_TOP_URL = "http://tv.api.3g.youku.com/tv/main/top"; 
 
 	public static String BASE_DETAIL = "http://tv.api.3g.youku.com/layout/smarttv/play/detail";
 

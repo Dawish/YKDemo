@@ -8,6 +8,7 @@ import android.view.View;
 public class HomeChannelPage extends HomeBasePage {
 
 	private String mTitle;
+	private View mContent;
 	
 	public HomeChannelPage(Context context,String title) {
 		super(context);
@@ -18,7 +19,7 @@ public class HomeChannelPage extends HomeBasePage {
 	public String getPageTitle() {
 		return mTitle;
 	}
-
+	
 	@Override
 	public void updateContentView() {
 
@@ -26,8 +27,8 @@ public class HomeChannelPage extends HomeBasePage {
 
 	@Override
 	protected View onCreateContentView() {
-		View view = generatePageContent(null, R.layout.home_test, mOffsetX, mOffsetY, true);
-		return view;
+		mContent = generatePageContent(null, R.layout.home_page_channel_template, mOffsetX, mOffsetY, true);
+		return mContent;
 	}
 
 }

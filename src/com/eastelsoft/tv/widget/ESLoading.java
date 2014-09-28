@@ -3,6 +3,7 @@ package com.eastelsoft.tv.widget;
 import com.eastelsoft.tv.R;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.util.AttributeSet;
 
 public class ESLoading extends ESLoadingView {
@@ -32,6 +33,17 @@ public class ESLoading extends ESLoadingView {
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 		setMeasuredDimension(loadingSize, loadingSize);
+	}
+	
+	@Override
+	protected void onLayout(boolean changed, int left, int top, int right,
+			int bottom) {
+		super.onLayout(changed, left, top, right, bottom);
+	}
+	
+	@Override
+	protected void onDraw(Canvas canvas) {
+		super.onDraw(canvas);
 	}
 
 	public int dip2px(float paramFloat){

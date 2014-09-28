@@ -1,5 +1,5 @@
 <resources>
 
     <string name="app_name">东创TV</string>
-
+	<string name="vitamio_init_decoders">初始化视频</string>
 </resources>

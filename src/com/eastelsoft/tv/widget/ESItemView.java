@@ -40,6 +40,11 @@ public class ESItemView extends TextView {
 	}
 	
 	@Override
+	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+	}
+	
+	@Override
 	protected void onDraw(Canvas canvas) {
 		drawBackgroundSelected(canvas);
 		super.onDraw(canvas);
