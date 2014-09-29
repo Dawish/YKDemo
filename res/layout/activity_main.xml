@@ -80,19 +80,6 @@
         android:layout_alignParentRight="true"
         android:layout_below="@id/top_tool_bar" />
 
-    <TextView
-        android:id="@+id/tip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/anchor"
-        android:layout_alignTop="@id/anchor"
-        android:layout_marginLeft="@dimen/px160"
-        android:background="@drawable/home_multiscreen_tip"
-        android:text="tip"
-        android:textColor="#ffffffff"
-        android:textSize="@dimen/px24"
-        android:visibility="invisible" />
-
     <view
         android:id="@+id/top_viewpager_navigator"
         android:layout_width="fill_parent"
@@ -100,7 +87,7 @@
         android:layout_marginTop="@dimen/px130"
         class="com.eastelsoft.tv.widget.home.HomeNavigatorLayout"
         android:paddingLeft="@dimen/px90"
-        android:paddingTop="@dimen/px50" />
+        android:paddingTop="@dimen/px60" />
 
     <view
         android:id="@+id/viewpager"

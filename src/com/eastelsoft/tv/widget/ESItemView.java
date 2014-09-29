@@ -57,7 +57,7 @@ public class ESItemView extends TextView {
 	
 	private void drawBackgroundSelected(Canvas canvas) {
 		if (hasFocus()) {
-			System.out.println("focus : true");
+			System.out.println("ESItemView focus : true");
 			CharSequence text = getText();
 			if (text != null && text.length() > 2) {
 				mDrawable = getResources().getDrawable(R.drawable.nav_focused_3);

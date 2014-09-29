@@ -9,7 +9,6 @@ import com.eastelsoft.tv.bean.HomePageBean.NavigatorItem;
 import com.eastelsoft.tv.bean.HomePageBean.ShowItem;
 import com.eastelsoft.tv.dao.HomePageDao;
 import com.eastelsoft.tv.ui.avtivity.DetailPageActivity;
-import com.eastelsoft.tv.ui.avtivity.player.VideoPlayerActivity;
 import com.eastelsoft.tv.util.URLHelper;
 import com.eastelsoft.tv.widget.ESImageView;
 

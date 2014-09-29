@@ -3,6 +3,79 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        
+        <include 
+            android:id="@+id/channel_0"
+            layout="@layout/home_page_channel_item"/>
+        
+        <include 
+            android:id="@+id/channel_1"
+            layout="@layout/home_page_channel_item"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        
+        <include 
+            android:id="@+id/channel_2"
+            layout="@layout/home_page_channel_item"/>
+        
+        <include 
+            android:id="@+id/channel_3"
+            android:layout_marginTop="@dimen/top_item_margin"
+            layout="@layout/home_page_channel_item"/>
+    </LinearLayout>
     
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        
+        <include 
+            android:id="@+id/channel_4"
+            layout="@layout/home_page_channel_item"/>
+        
+        <include 
+            android:id="@+id/channel_5"
+            android:layout_marginTop="@dimen/top_item_margin"
+            layout="@layout/home_page_channel_item"/>
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        
+        <include 
+            android:id="@+id/channel_6"
+            layout="@layout/home_page_channel_item"/>
+        
+        <include 
+            android:id="@+id/channel_7"
+            android:layout_marginTop="@dimen/top_item_margin"
+            layout="@layout/home_page_channel_item"/>
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        
+        <include 
+            android:id="@+id/channel_8"
+            layout="@layout/home_page_channel_item"/>
+        
+        <include 
+            android:id="@+id/channel_9"
+            android:layout_marginTop="@dimen/top_item_margin"
+            layout="@layout/home_page_channel_item"/>
+    </LinearLayout>
 
 </LinearLayout>

@@ -19,6 +19,7 @@ import com.eastelsoft.tv.widget.home.HomeBasePage;
 import com.eastelsoft.tv.widget.home.HomeChannelPage;
 import com.eastelsoft.tv.widget.home.HomePagerAdapter;
 import com.eastelsoft.tv.widget.home.HomeRecommendPage;
+import com.eastelsoft.tv.widget.home.HomeTestPage;
 
 public class HomeActivity extends BaseActivity implements OnClickListener{
 
@@ -66,8 +67,8 @@ public class HomeActivity extends BaseActivity implements OnClickListener{
 		mPagerSpecs = new ArrayList<>();
 		mPagerSpecs.add(new HomeRecommendPage(this,"首页"));
 		mPagerSpecs.add(new HomeChannelPage(this,"频道"));
-		mPagerSpecs.add(new HomeChannelPage(this,"排行榜"));
-		mPagerSpecs.add(new HomeChannelPage(this,"我的"));
+		mPagerSpecs.add(new HomeTestPage(this,"排行榜"));
+		mPagerSpecs.add(new HomeTestPage(this,"我的"));
 		initViewPagerNavigation();
 		
 		mPagerAdapter = new HomePagerAdapter(this, mPagerSpecs);

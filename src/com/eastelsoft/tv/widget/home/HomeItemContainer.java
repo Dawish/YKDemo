@@ -1,25 +1,26 @@
 package com.eastelsoft.tv.widget.home;
 
 import com.eastelsoft.tv.R;
-
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.RelativeLayout;
 
 public class HomeItemContainer extends RelativeLayout {
 	
 	private Rect mBound;
 	private Drawable mDrawable;
-	private boolean mDrawShadow;
-	private Paint mPaint;
 	private Rect mRect;
-
+	
+	private Animation scaleSmallAnimation;
+	private Animation scaleBigAnimation;
+	
 	public HomeItemContainer(Context context) {
 		super(context);
 		init();
@@ -39,54 +40,19 @@ public class HomeItemContainer extends RelativeLayout {
 		setWillNotDraw(false);
 		mRect = new Rect();
 		mBound = new Rect();
-		mDrawable = getResources().getDrawable(R.drawable.poster_shadow_4);
-		mPaint = new Paint();
-		mPaint.setColor(Color.GRAY);
+		mDrawable = getResources().getDrawable(R.drawable.poster_shadow_4);//nav_focused_2,poster_shadow_4
 		setChildrenDrawingOrderEnabled(true);
-	}
-
-	@Override
-	public void buildDrawingCache(boolean autoScale) {
-		super.buildDrawingCache(autoScale);
-	}
-
-	@Override
-	public void buildLayer() {
-		super.buildLayer();
-	}
-
-	@Override
-	protected void dispatchDraw(Canvas canvas) {
-		super.dispatchDraw(canvas);
-	}
-
-	@Override
-	public void draw(Canvas canvas) {
-		super.draw(canvas);
-	}
-
-	@Override
-	public Bitmap getDrawingCache() {
-		return super.getDrawingCache();
-	}
-
-	@Override
-	public void getDrawingRect(Rect outRect) {
-		super.getDrawingRect(outRect);
 	}
 
 	@Override
 	protected void onAttachedToWindow() {
 		super.onAttachedToWindow();
-		mDrawShadow = true;
 	}
 	
 	@Override
 	protected void onDraw(Canvas canvas) {
-		if (!hasFocus()) {
-			return;
-		}
-		if (mDrawShadow && hasFocus()) {
+		if (hasFocus()) {
+			System.out.println("HomeItemContainer focus : true ");
 			super.getDrawingRect(mRect);
 			mBound.set(-39+mRect.left, -39+mRect.top, 39+mRect.right, 39+mRect.bottom);
 			mDrawable.setBounds(mBound);
@@ -96,8 +62,27 @@ public class HomeItemContainer extends RelativeLayout {
 	}
 	
 	@Override
-	protected void onFocusChanged(boolean gainFocus, int direction,
-			Rect previouslyFocusedRect) {
+	protected void onFocusChanged(boolean gainFocus, int direction, Rect previouslyFocusedRect) {
 		super.onFocusChanged(gainFocus, direction, previouslyFocusedRect);
+		if (gainFocus) {
+			zoomOut();
+		} else {
+			zoomIn();
+		}
 	}
+	
+	private void zoomIn() {
+		if (scaleSmallAnimation == null) {
+			scaleSmallAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.anim_scale_small);
+		}
+		startAnimation(scaleSmallAnimation);
+	}
+	
+	private void zoomOut() {
+		if (scaleBigAnimation == null) {
+			scaleBigAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.anim_scale_big);
+		}
+		startAnimation(scaleBigAnimation);
+	}
+	
 }
