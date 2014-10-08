@@ -1,68 +1,61 @@
-package com.eastelsoft.tv.widget.home;
+package com.eastelsoft.tv.widget;
 
 import com.eastelsoft.tv.R;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.RelativeLayout;
 
-public class HomeItemContainer extends RelativeLayout {
+public class ESTextLayout extends RelativeLayout {
 	
-	private Rect mBound;
-	private Drawable mDrawable;
+	private Paint mPaint;
 	private Rect mRect;
+	private Rect mBounds;
+	private Drawable mDrawable;
 	
 	private Animation scaleSmallAnimation;
 	private Animation scaleBigAnimation;
-	
-	public HomeItemContainer(Context context) {
+
+	public ESTextLayout(Context context) {
 		super(context);
 		init();
 	}
 
-	public HomeItemContainer(Context context, AttributeSet attrs, int defStyle) {
+	public ESTextLayout(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 		init();
 	}
 
-	public HomeItemContainer(Context context, AttributeSet attrs) {
+	public ESTextLayout(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		init();
 	}
 	
-	protected void init() {
-		setWillNotDraw(false);
+	private void init() {
+		mPaint = new Paint();
+		mPaint.setColor(Color.YELLOW);
 		mRect = new Rect();
-		mBound = new Rect();
-		mDrawable = getResources().getDrawable(R.drawable.poster_shadow_4);//nav_focused_2,poster_shadow_4
+		mBounds = new Rect();
+		mDrawable = getResources().getDrawable(R.drawable.poster_foc);
+		setWillNotDraw(false);
 		setChildrenDrawingOrderEnabled(true);
 	}
 
 	@Override
-	protected void onAttachedToWindow() {
-		super.onAttachedToWindow();
-	}
-	
-	@Override
-	public void draw(Canvas canvas) {
-		super.draw(canvas);
-	}
-	
-	@Override
 	protected void onDraw(Canvas canvas) {
 		if (hasFocus()) {
-			System.out.println("HomeItemContainer focus : true ");
 			super.getDrawingRect(mRect);
-			mBound.set(-39+mRect.left, -39+mRect.top, 39+mRect.right, 39+mRect.bottom);
-			mDrawable.setBounds(mBound);
-			canvas.save();
+			mBounds.set(-39+mRect.left, -39+mRect.top, 39+mRect.right, 39+mRect.bottom);
+			mDrawable.setBounds(mBounds);
 			mDrawable.draw(canvas);
-			canvas.restore();
 		}
 		super.onDraw(canvas);
 	}
@@ -71,9 +64,7 @@ public class HomeItemContainer extends RelativeLayout {
 	protected void onFocusChanged(boolean gainFocus, int direction, Rect previouslyFocusedRect) {
 		super.onFocusChanged(gainFocus, direction, previouslyFocusedRect);
 		if (gainFocus) {
-			bringToFront();
-			getRootView().requestLayout();
-			getRootView().invalidate();
+			bringChildToFront(getFocusedChild());
 			zoomOut();
 		} else {
 			zoomIn();
@@ -93,5 +84,4 @@ public class HomeItemContainer extends RelativeLayout {
 		}
 		startAnimation(scaleBigAnimation);
 	}
-	
 }

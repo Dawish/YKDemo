@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.eastelsoft.tv.widget.home.HomeItemContainer xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item"
+    android:layout_width="@dimen/home_top_item_width"
+    android:layout_height="@dimen/home_top_item_height"
+    class="com.eastelsoft.tv.widget.home.HomeItemContainer"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true" >
+
+    <com.eastelsoft.tv.widget.ESImageView
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:duplicateParentState="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/holder_nor" />
+
+    <com.eastelsoft.tv.widget.ESImageView
+        android:id="@+id/hover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:duplicateParentState="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/sl_image_home_navigator" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px124"
+        android:gravity="center_horizontal"
+        android:layout_alignParentBottom="true" >
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="@dimen/px58"
+            android:layout_height="@dimen/px58"
+            android:layout_gravity="center"
+            android:src="@drawable/ranking_reco_icon" />
+
+        <TextView
+            android:id="@id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/px20"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:shadowColor="#88333333"
+            android:shadowDx="2.0"
+            android:shadowDy="2.0"
+            android:shadowRadius="2.0"
+            android:singleLine="true"
+            android:text="text"
+            android:textColor="#ffffffff" />
+    </LinearLayout>
+
+</com.eastelsoft.tv.widget.home.HomeItemContainer>

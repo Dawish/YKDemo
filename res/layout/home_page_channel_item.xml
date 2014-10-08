@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <view xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/item"
-    android:layout_margin="@dimen/px8"
     android:layout_width="@dimen/home_channel_item_width"
     android:layout_height="@dimen/home_channel_item_height"
     class="com.eastelsoft.tv.widget.home.HomeItemContainer"

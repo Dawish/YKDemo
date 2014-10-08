@@ -12,25 +12,26 @@ import com.eastelsoft.tv.widget.ESImageView;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class HomeChannelPage extends HomeBasePage {
+public class HomeTopPage extends HomeBasePage {
 
 	private String mTitle;
 	private View mContent;
 	private ChannelTopBean bean;
 	
-	public HomeChannelPage(Context context,String title) {
+	public HomeTopPage(Context context, String title) {
 		super(context);
 		mTitle = title;
 	}
-	
+
 	@Override
 	public String getPageTitle() {
 		return mTitle;
 	}
-	
+
 	@Override
 	public void updateContentView() {
 		if (bean == null) {
@@ -43,31 +44,30 @@ public class HomeChannelPage extends HomeBasePage {
 
 	@Override
 	protected View onCreateContentView() {
-		mContent = generatePageContent(null, R.layout.home_page_channel_template, mOffsetX, mOffsetY, true);
+		mContent = generatePageContent(null, R.layout.home_page_top_template, mOffsetX, mOffsetY, true);
 		return mContent;
 	}
-
-	private void initItemView(int resId, ChannelTopBean.Channel channel) {
+	
+	private void initItemView(int resId, ChannelTopBean.Top top) {
 		View view = mContent.findViewById(resId);
-		ESImageView imageView = (ESImageView)view.findViewById(R.id.img);
-		TextView textView = (TextView)view.findViewById(R.id.text);
-		imageLoader.displayImage(channel.image, imageView, options);
-		textView.setText(channel.title);
+		ESImageView img = (ESImageView)view.findViewById(R.id.img);
+		imageLoader.displayImage(top.image, img, options);
+		((TextView)view.findViewById(R.id.text)).setText(top.title);
+		ImageView icon = (ImageView)view.findViewById(R.id.icon);
+		String top_id = top.top_id;
+		if ("1".equals(top_id)) {
+			icon.setImageDrawable(mContent.getResources().getDrawable(R.drawable.ranking_reco_icon));
+		}else if("2".equals(top_id)) {
+			icon.setImageDrawable(mContent.getResources().getDrawable(R.drawable.ranking_search_icon));
+		}else if("3".equals(top_id)) {
+			icon.setImageDrawable(mContent.getResources().getDrawable(R.drawable.ranking_cinemas_icon));
+		}
 	}
 	
 	private void initData() {
-		initItemView(R.id.channel_0, bean.results.channel.get(0));
-		initItemView(R.id.channel_1, bean.results.channel.get(1));
-		initItemView(R.id.channel_2, bean.results.channel.get(2));
-		initItemView(R.id.channel_3, bean.results.channel.get(3));
-		initItemView(R.id.channel_4, bean.results.channel.get(4));
-		initItemView(R.id.channel_5, bean.results.channel.get(5));
-		initItemView(R.id.channel_6, bean.results.channel.get(6));
-		initItemView(R.id.channel_7, bean.results.channel.get(7));
-		initItemView(R.id.channel_8, bean.results.channel.get(8));
-		initItemView(R.id.channel_9, bean.results.channel.get(9));
-		
-//		mContent.findViewById(R.id.channel_0).requestFocus();
+		initItemView(R.id.top_0, bean.results.top.get(0));
+		initItemView(R.id.top_1, bean.results.top.get(1));
+		initItemView(R.id.top_2, bean.results.top.get(2));
 	}
 	
 	public class MyAsyncTask extends AsyncTask<String, Integer, Boolean> {
@@ -93,4 +93,5 @@ public class HomeChannelPage extends HomeBasePage {
 		}
 		
 	}
+
 }

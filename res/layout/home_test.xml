@@ -2,13 +2,102 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center" >
+     >
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="channel page!!!" />
-
+    <view 
+        android:layout_width="@dimen/home_channel_item_width"
+        android:layout_height="@dimen/home_channel_item_height" 
+        class="com.eastelsoft.tv.widget.ESTextLayout"
+        android:layout_marginLeft="50dp"
+	    android:layout_marginTop="50dp"
+        android:focusable="true"
+	    android:focusableInTouchMode="true"
+	    android:clickable="true" >
+	    
+        <!--  -->
+        <ImageView
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:duplicateParentState="true"
+	        android:src="@drawable/all_app" />
+        
+        <ImageView
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:duplicateParentState="true"
+	        android:src="@drawable/sl_image_home_navigator" />
+    
+        <TextView 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentBottom="true"
+	       	android:gravity="right"
+	        android:text="tv1"
+	        android:textColor="#ffffffff" />
+    </view>
+    
+    <view 
+        android:layout_width="@dimen/home_channel_item_width"
+        android:layout_height="@dimen/home_channel_item_height" 
+        class="com.eastelsoft.tv.widget.ESTextLayout"
+        android:layout_marginLeft="@dimen/px5"
+        android:layout_marginTop="50dp"
+        android:focusable="true"
+	    android:focusableInTouchMode="true"
+	    android:clickable="true" >
+	    
+        <!--  -->
+        <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:duplicateParentState="true"
+        android:src="@drawable/all_app" />
+        
+        <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:duplicateParentState="true"
+        android:src="@drawable/sl_image_home_navigator" />
+    
+        <TextView 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentBottom="true"
+	       	android:gravity="right"
+	        android:text="tv2"
+	        android:textColor="#ffffffff" />
+    </view>
+    
+    <view 
+        android:layout_width="@dimen/home_channel_item_width"
+        android:layout_height="@dimen/home_channel_item_height" 
+        class="com.eastelsoft.tv.widget.ESTextLayout"
+        android:layout_marginLeft="@dimen/px5"
+        android:layout_marginTop="50dp"
+        android:focusable="true"
+	    android:focusableInTouchMode="true"
+	    android:clickable="true" >
+	    
+        <!--  -->
+        <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:duplicateParentState="true"
+        android:src="@drawable/all_app" />
+        
+        <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:duplicateParentState="true"
+        android:src="@drawable/sl_image_home_navigator" />
+    
+        <TextView 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentBottom="true"
+	       	android:gravity="right"
+	        android:text="tv3"
+	        android:textColor="#ffffffff" />
+    </view>
+    
 </LinearLayout>
