@@ -167,7 +167,7 @@ public class DetailPageActivity extends BaseActivity {
 		if (mBean.detail.genre != null && mBean.detail.genre.size() > 0) {
 			mType.setText("类型："+mBean.detail.genre.get(0));
 		}else {
-			mType.setText("地区：未知");
+			mType.setText("类型：未知");
 		}
 		if (mBean.detail.director != null && mBean.detail.director.size() > 0) {
 			mDirector.setText("导演："+mBean.detail.director.get(0));
@@ -215,16 +215,34 @@ public class DetailPageActivity extends BaseActivity {
 	private class MoiveAsyncTask extends AsyncTask<String, Integer, Boolean> {
 		@Override
 		protected Boolean doInBackground(String... params) {
-			String url = URLHelper.BASE_DETAIL;
-			HashMap<String, String> uParams = URLHelper.getPARARMS();
-			uParams.put("id", mShowId);
-			mBean = new DetailPageDao(url, uParams).getBean();
-			return true;
+			boolean isDB = loadFromDB();
+			if (isDB) {
+				return true;
+			} else {
+				loadFromNet();
+				return true;
+			}
 		}
 		@Override
 		protected void onPostExecute(Boolean result) {
 			super.onPostExecute(result);
 			updateViews();
+		}
+		
+		private Boolean loadFromDB() {
+			
+			return false;
+		}
+		
+		private Boolean loadFromNet() {
+			String url = URLHelper.BASE_DETAIL;
+			HashMap<String, String> uParams = URLHelper.getPARARMS();
+			uParams.put("id", mShowId);
+			mBean = new DetailPageDao(url, uParams).getBean();
+			
+			//录入DB
+			
+			return true;
 		}
 	}
 	

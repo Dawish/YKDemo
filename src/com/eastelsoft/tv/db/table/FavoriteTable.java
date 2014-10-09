@@ -7,6 +7,12 @@ package com.eastelsoft.tv.db.table;
  */
 public class FavoriteTable {
 
-	public static final String TABLE_NAME = "favorite_table";
+	public static String table_name = "favorite_table";
+	
+	public static int id;
+	public static String showid;
+	public static String img;
+	public static String title;
+	public static String stripe_bottom;
 	
 }

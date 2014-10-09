@@ -86,13 +86,13 @@ public class VideoPlayerActivity extends BaseActivity implements OnCompletionLis
 		mMediaController.setFileName(mTitle);
 		mVideoView.setMediaController(mMediaController);
 		mVideoView.requestFocus();
-		mVideoView.setOnKeyListener(new OnKeyListener() {
-			@Override
-			public boolean onKey(View v, int keyCode, KeyEvent event) {
-				Toast.makeText(VideoPlayerActivity.this, String.format("keyCode : %d", keyCode), Toast.LENGTH_SHORT).show();
-				return true;
-			}
-		});
+//		mVideoView.setOnKeyListener(new OnKeyListener() {
+//			@Override
+//			public boolean onKey(View v, int keyCode, KeyEvent event) {
+//				Toast.makeText(VideoPlayerActivity.this, String.format("keyCode : %d", keyCode), Toast.LENGTH_SHORT).show();
+//				return true;
+//			}
+//		});
 		
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 	}
